@@ -33,7 +33,6 @@ export const Button = styled.button`
   font-size: 26px;
   border: 0;
   cursor: pointer;
-  margin: auto;
 
   &:hover {
     background: #f40612;
