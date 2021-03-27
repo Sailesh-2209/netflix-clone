@@ -1,11 +1,12 @@
 import React from "react";
 import { useContent } from "../hooks";
-import { FirebaseContext } from "../context/firebase";
+import { BrowseContainer } from "../containers/browse";
+import selectionFilter from "../utils/selection-filter";
+
 export default function Browse() {
   const { series } = useContent("series");
   const { films } = useContent("films");
-  console.log(series);
-  console.log(films);
+  const slides = selectionFilter({ series, films });
 
-  return <div>Hello browse world</div>;
+  return <BrowseContainer slides={slides} />;
 }
