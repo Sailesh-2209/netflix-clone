@@ -4,9 +4,11 @@ import "./App.css";
 import * as ROUTES from "./constants/routes";
 import { Home, Signup, Browse, Signin } from "./pages";
 import { IsUserRedirect, ProtectedRoute } from "./helpers/routes";
+import { useAuthListener } from "./hooks";
 
 export default function App() {
-  const user = false;
+  const { user } = useAuthListener();
+
   return (
     <Router>
       <IsUserRedirect
