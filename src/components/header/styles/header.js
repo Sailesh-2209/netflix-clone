@@ -4,7 +4,7 @@ import { Link as ReactRouterLink } from "react-router-dom";
 export const Background = styled.div`
   display: flex;
   flex-direction: column;
-  background: url(${({ src }) => src ? "../images/misc/${src}.jpg" : "../images/misc/home-bg.jpg"}) top left / cover no-repeat;
+  background: url(${({ src }) => src ? `../images/misc/${src}.jpg` : "../images/misc/home-bg.jpg"}) top left / cover no-repeat;
 `;
 
 export const Frame = styled.div``;
@@ -54,4 +54,33 @@ export const ButtonLink = styled(ReactRouterLink)`
   &:hover {
     background-color: #f40612;
   }
+`;
+
+export const Feature = styled(Container)`
+  padding: 150px 0px 500px 0px;
+  flex-direction: column;
+  align-items: normal;
+  width: 50%;
+
+  @media (max-width: 1100px) {
+    display: none;
+  }
+`;
+
+export const Text = styled.p`
+  color: white;
+  line-height: normal;
+  font-size: 22px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
+  margin: 0;
+`;
+
+export const FeatureCallout = styled.h1`
+  color: white;
+  line-height: normal;
+  font-size: 50px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
+  margin: 0;
+  margin-bottom: 20px;
 `;
