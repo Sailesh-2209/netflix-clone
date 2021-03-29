@@ -105,6 +105,7 @@ export const Link = styled.p`
   text-decoration: none;
   margin-right: 30px;
   font-weight: ${({ active }) => (active === 'true' ? '700' : 'normal')};
+  cursor: pointer;
 
   &:hover {
     font-weight: bold;
