@@ -15,6 +15,14 @@ export function BrowseContainer({ slides }) {
   const [loading, setLoading] = useState(true);
   const user = firebase.auth().currentUser || {};
 
+  const handleSignOut = () => {
+    firebase
+      .auth()
+      .signOut()
+      .then(() => console.log("Signed Out"))
+      .catch((error) => console.log(error));
+  };
+
   console.log(firebase.auth().currentUser);
 
   useEffect(() => {
@@ -65,7 +73,9 @@ export function BrowseContainer({ slides }) {
                     <Header.TextLink>{user.displayName}</Header.TextLink>
                   </Header.Group>
                   <Header.Group>
-                    <Header.TextLink>Sign Out</Header.TextLink>
+                    <Header.TextLink onClick={() => handleSignOut()}>
+                      Sign Out
+                    </Header.TextLink>
                   </Header.Group>
                 </Header.Dropdown>
               </Header.Profile>
